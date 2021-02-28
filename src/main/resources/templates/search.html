@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="'Search ' + ${search}">Search</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>email</th>
+        <th>Specialization</th>
+    </tr>
+    <tr th:each="doc: ${docs}">
+        <td th:text="${doc.name}">Name:</td>
+        <td th:text="${doc.surname}">Surname:</td>
+        <td th:text="${doc.email}">email:</td>
+        <td th:text="${doc.specialization}">Specialization:</td>
+    </tr>
+</table>
+</body>
+</html>
