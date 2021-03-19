@@ -12,9 +12,10 @@ import java.util.List;
 // CRUD refers Create, Read, Update, Delete
 @Repository
 public interface DoctorsRepository extends JpaRepository<Doctors, Long> {
+    Doctors findByEmail(String email);
 
     @Query(value = "SELECT p FROM Doctors p WHERE p.specialization LIKE %:keyword%")
-   public List<Doctors> findAll(String keyword);
+    public List<Doctors> findAll(String keyword);
 
 
 }

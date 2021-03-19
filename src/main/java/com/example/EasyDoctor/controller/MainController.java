@@ -2,13 +2,19 @@
 package com.example.EasyDoctor.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller // This means this class is a controller
 public class MainController {
- @RequestMapping("/")
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/")
     public String index() {
-     return "index";
- }
+        return "index";
+    }
 }
 
